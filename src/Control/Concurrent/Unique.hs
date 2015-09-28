@@ -22,7 +22,11 @@ import GHC.Types
 data Unique = Unique !Int (MutableByteArray# RealWorld)
 
 instance Eq Unique where
+#if MIN_VERSION_base(4,7,0)
   Unique _ p == Unique _ q = isTrue# (sameMutableByteArray# p q)
+#else
+  Unique _ p == Unique _ q = sameMutableByteArray# p q
+#endif
 
 instance Hashable Unique where
   hash (Unique i _) = i
