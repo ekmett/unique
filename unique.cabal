@@ -1,7 +1,7 @@
 name:          unique
 category:      Concurrency, Data
 version:       0
-license:       BSD3
+license:       BSD2
 cabal-version: >= 1.10
 license-file:  LICENSE
 author:        Edward A. Kmett
