@@ -1,6 +1,7 @@
 {-# LANGUAGE CPP #-}
 {-# LANGUAGE UnboxedTuples #-}
 {-# LANGUAGE MagicHash #-}
+{-# LANGUAGE Trustworthy #-}
 
 -- | An abstract interface to a concurrent unique symbol generator.
 --
@@ -9,7 +10,7 @@ module Control.Concurrent.Unique
   ( Unique, newUnique
   ) where
 
-import Data.Hashable
+import Data.Hashable (Hashable (..))
 import GHC.IO
 import GHC.Exts
 
