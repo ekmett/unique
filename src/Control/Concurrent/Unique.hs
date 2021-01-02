@@ -11,8 +11,7 @@ module Control.Concurrent.Unique
 
 import Data.Hashable
 import GHC.IO
-import GHC.Prim
-import GHC.Types
+import GHC.Exts
 
 -- | Unique identifiers are created by creating heap objects in kind # that
 -- can be compared for value equality and then hashing them using their initial allocation
