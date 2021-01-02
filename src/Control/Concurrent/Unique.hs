@@ -11,12 +11,33 @@ module Control.Concurrent.Unique
 
 import Data.Hashable
 import GHC.IO
-import GHC.Prim
-import GHC.Types
+import GHC.Exts
+
+-- $setup
+-- >>> import Data.Hashable
 
 -- | Unique identifiers are created by creating heap objects in kind # that
 -- can be compared for value equality and then hashing them using their initial allocation
 -- address.
+--
+-- >>> x <- newUnique
+-- >>> y <- newUnique
+-- >>> z <- newUnique
+--
+-- >>> [x == x, y == y, z == z]
+-- [True,True,True]
+--
+-- >>> [x == y, y == z, z == x]
+-- [False,False,False]
+--
+-- The hashes could be same, in theory, but in practice they are different
+-- as well.
+--
+-- >>> [ hash x == hash x, hash y == hash y, hash z == hash z]
+-- [True,True,True]
+--
+-- >>> [ hash x == hash y, hash y == hash z, hash z == hash x]
+-- [False,False,False]
 
 -- TODO: If, due to a small heap size we find we have high collision rate on initial allocation location
 -- we might consider upgrading this initial hash with something fast and volatile, e.g. rdtsc
