@@ -1,7 +1,8 @@
 unique
 ==============
 
-[![Hackage](https://img.shields.io/hackage/v/unique.svg)](https://hackage.haskell.org/package/unique) [![Build Status](https://secure.travis-ci.org/ekmett/unique.png?branch=master)](http://travis-ci.org/ekmett/unique)
+[![Hackage](https://img.shields.io/hackage/v/unique.svg)](https://hackage.haskell.org/package/unique) [![Build Status](https://github.com/ekmett/unique/workflows/Haskell-CI/badge.svg)](https://github.com/ekmett/unique/actions?query=workflow%3AHaskell-CI)
+
 
 This package provides a version of Data.Unique that is fully concurrent.
 
