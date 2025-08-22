@@ -1,5 +1,6 @@
 ## next
 
+* Allow building with `hashable-1.5.*`.
 * Drop support for pre-8.0 versions of GHC.
 
 ## 0.0.1
